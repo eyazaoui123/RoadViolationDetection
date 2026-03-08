@@ -67,7 +67,7 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 ### Étapes
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/yourusername/RoadViolationDetection.git
+   git clone https://github.com/eyazaoui123/RoadViolationDetection.git
    cd RoadViolationDetection
 2. Installer les requirements
 3. Excécuter le fichier main.py
