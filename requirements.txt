@@ -1,6 +1,7 @@
-tkinter 
-Pillow
+tensorflow
 numpy
 pandas
-tensorflow
-keras
+Pillow
+matplotlib
+scikit-learn
+scipy
