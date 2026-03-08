@@ -11,6 +11,7 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 <p align="center">
   <img src="screenshots/Capture_4.jpg" width="600">
 </p>
+
 ---
 
 ## 📊 Base de Données
@@ -58,6 +59,7 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 - Développée avec Tkinter pour charger une image et afficher les prédictions avec probabilités.
 - Aucune dépendance externe requise pour l’UI (Tkinter + PIL).
 
+---
 
 ## 🛠️ Installation et Exécution
 
@@ -65,7 +67,7 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 - **Python 3.6+** (Tkinter inclus par défaut)
 - Bibliothèques Python : TensorFlow, NumPy, Pandas, PIL, Tkinter, keras, matplotlib
 
-### Prérequis
+### étapes
 1. Clonez le dépôt :
 ```
 git clone https://github.com/eyazaoui123/RoadViolationDetection.git
@@ -91,6 +93,8 @@ python main.py
 ```
 **Note GPU **: Le script détecte automatiquement un GPU si disponible, mais fonctionne aussi sur CPU (plus lent).
 
+---
+
 ## 📁 Repository Structure
 
 ```
@@ -106,6 +110,8 @@ RoadViolationDetection/
 └── README.md
 
 ```
+
+---
 
 ## 🔮 Perspectives / Travaux Futurs
 
