@@ -91,7 +91,7 @@ python training_model.py
 ```
 python main.py
 ```
-**Note GPU **: Le script détecte automatiquement un GPU si disponible, mais fonctionne aussi sur CPU (plus lent).
+**Note GPU**: Le script détecte automatiquement un GPU si disponible, mais fonctionne aussi sur CPU (plus lent).
 
 ---
 
