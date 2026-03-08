@@ -75,7 +75,7 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 ## 📁 Repository Structure
 
 ```
-RoadViolationDetection-main/
+RoadViolationDetection/
 │
 ├── main.py                     # Interface graphique Tkinter
 ├── labels.csv                  # Noms des classes
