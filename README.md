@@ -39,6 +39,9 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 ### Étape 4: Évaluation
 - Accuracy sur test set : ~0.82
 - Visualisation des courbes de loss et accuracy pour train et validation et la matrice de confusion .
+ ![Main Input Window](screenshots/accuracy.png) 
+ ![Main Input Window](screenshots/loss.png)
+ ![Main Input Window](screenshots/matrice.png) 
 
 ### Étape 5: Interface Graphique
 - Développée avec Tkinter pour charger une image et afficher les prédictions avec probabilités.
@@ -76,6 +79,13 @@ RoadViolationDetection-main/
 └── README.md
 
 ```
+
+## 🔮 Perspectives / Travaux Futurs
+
+- **Extension et équilibrage de la base de données** : Utiliser un dataset plus volumineux et équilibré pour améliorer la généralisation, notamment pour les classes sous-représentées.
+- **Matériel plus performant** : Entraîner le modèle sur des GPU plus puissants permettrait d’expérimenter des réseaux plus profonds ou des résolutions d’images plus grandes, améliorant les performances.
+- **Architectures avancées** : Tester des CNN plus sophistiqués (EfficientNet, ResNeXt) ou des approches par ensemble pour accroître la précision.
+
 ## 👩‍💻 Author
 
 **Eya Zaoui**
