@@ -41,13 +41,13 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 - Accuracy sur test set : ~0.82
 - Visualisation des courbes de loss et accuracy pour train et validation et la matrice de confusion .
 <p align="center">
-  <img src="screenshots/accuracy.png" width="600">
+  <img src="screenshots/accuracy.png" width="300">
 </p>
 <p align="center">
-  <img src="screenshots/loss.png" width="600">
+  <img src="screenshots/loss.png" width="300">
 </p>
 <p align="center">
-  <img src="screenshots/matrice.png" width="600">
+  <img src="screenshots/matrice.png" width="300">
 </p>
 
 ### Étape 5: Interface Graphique
