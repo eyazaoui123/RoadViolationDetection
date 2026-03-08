@@ -1,75 +1,59 @@
 # 🚦Road Violation Detection🚦
 
-## Objectif
-Construire un modèle d’apprentissage pour détecter les infractions (violations) au code de la route ciblant spécifiquement les feux de circulations et les panneaux (par exemple feux rouges, panneaux STOP, etc.).  
-Ce projet inclut une interface graphique permettant de tester différentes images pour évaluer la pertinence du système.
+## 🎯 Objectif
+
+Développer un modèle de classification basé sur CNN pour détecter les infractions au code de la route dans les images, en se concentrant sur :
+- **Feux de circulation** (Green, Red)
+- **Panneaux de limitation de vitesse** et **STOP**
+
+Une interface graphique interactive permet de charger une image et d’afficher les prédictions avec probabilités.
 
 ![Main Input Window](screenshots/Capture_4.jpg)
 
 ---
 
-## Base de Données
-**DataSet = https://drive.google.com/drive/folders/1_84ouwGTOg_nGTroiM7brgEZVby8QU7l**  
-**Classes cibles:**  
-- Green Light  
-- Red Light  
-- Speed Limit 10  
-- Speed Limit 20  
-- Speed Limit 30  
-- Speed Limit 40  
-- Speed Limit 50  
-- Speed Limit 60  
-- Speed Limit 70  
-- Speed Limit 80  
-- Speed Limit 90  
-- Speed Limit 100  
-- Speed Limit 110  
-- Speed Limit 120  
-- Stop  
+## 📊 Base de Données
+- **DataSet = https://drive.google.com/drive/folders/1_84ouwGTOg_nGTroiM7brgEZVby8QU7l**  
+- **Nombre de classes** : 15
+- **Format des annotations** : Darknet
+- **Prétraitement réalisé** : Images copiées dans des dossiers par classe et redimensionnées à 224×224 pixels.
 
-Les étiquettes des données sont en format **Darknet**.
+**Train/Validation/Test split** : Déjà organisé dans le dataset, traité via ImageDataGenerator.
 
----
+## ⚙️ Étapes du Projet
 
-## Étapes du Projet
+### Étape 1: Prétraitement et organisation des données
+- Copie des images dans des répertoires par classe.
+- Normalisation des pixels [0,1] et augmentation de données (rotation, translation, zoom, flip).
 
-### Étape 1: Définition de l’architecture du modèle CNN
-- Conception d'un modèle de réseau de neurones convolutif (CNN).
+### Étape 2: Définition du modèle CNN (transfer learning)
+- MobileNetV2 pré-entraîné sur ImageNet, tête personnalisée avec GlobalAveragePooling2D, Dense et Dropout.
+- Fine-tuning des dernières couches pour adapter au dataset.
 
-### Étape 2: Entraînement du modèle
-- Division des données en trois ensembles : entraînement, validation et test.
-- Les images d'entraînement sont accompagnées de leurs étiquettes réelles correspondantes.
-- L’entraînement est effectué sur 30 époques.
+### Étape 3: Entraînement
+- Optimiseur : Adam (lr=0.0001)
+- Loss : sparse_categorical_crossentropy
+- Callbacks : EarlyStopping et ReduceLROnPlateau
+- Époques : 30
 
-### Étape 3: Prédiction des images
-- Prédictions des classes pour les images de test via une interface graphique interactive.
+### Étape 4: Évaluation
+- Accuracy sur test set : ~0.82
+- Visualisation des courbes de loss et accuracy pour train et validation et la matrice de confusion .
 
-### Étape 4: Évaluation des performances
-- Génération d'une matrice de confusion.
-- Calcul de l'accuracy du modèle ==> 0.81 - 0.82 - 0.83
+### Étape 5: Interface Graphique
+- Développée avec Tkinter pour charger une image et afficher les prédictions avec probabilités.
 
----
+## 🖥️ Interface Graphique
+- Charger des images locales via bouton.
+- Afficher les prédictions de classes et probabilités.
+- Aucune dépendance externe requise pour l’UI (Tkinter + PIL).
 
-## Interface Graphique
-Une interface utilisateur a été développée avec **Tkinter** pour permettre de:
-- Charger des images à partir du système local.
-- Visualiser les prédictions du modèle pour une image donnée.
-- Afficher les classes détectées et leurs probabilités.
-
----
-
-## Installation et Exécution
+## 🛠️ Installation et Exécution
 
 ### Prérequis
 - Python 3.6+
-- Bibliothèques Python :
-  - TensorFlow
-  - NumPy
-  - Pandas
-  - PIL
-  - Tkinter
-  - keras
-
+- Bibliothèques Python : TensorFlow, NumPy, Pandas, PIL, Tkinter, keras, matplotlib
+  
 ### Étapes
 1. Clonez le dépôt :
    ```bash
@@ -77,3 +61,24 @@ Une interface utilisateur a été développée avec **Tkinter** pour permettre d
    cd RoadViolationDetection
 2. Installer les requirements
 3. Excécuter le fichier main.py
+
+## 📁 Repository Structure
+
+```
+RoadViolationDetection-main/
+│
+├── main.py                     # Interface graphique Tkinter
+├── labels.csv                  # Noms des classes
+├── road_violation_model3.keras # Modèle entraîné
+├── training_model.ipynb        # Notebook d’entraînement
+├── screenshots/                # Captures d’écran UI
+├── requirements.txt            # Dépendances Python
+└── README.md
+
+```
+## 👩‍💻 Author
+
+**Eya Zaoui**
+- 💼 AI & Software Engineer | | Expert in Machine Learning, Deep Learning, and Computer Vision
+- 📧 Email: zaouieya2@gmail.com
+- 🔗 LinkedIn: [linkedin.com/in/eya-zaoui](linkedin.com/in/eya-zaoui)
