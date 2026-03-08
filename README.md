@@ -8,7 +8,6 @@ Développer un modèle de classification basé sur CNN pour détecter les infrac
 
 Une interface graphique interactive permet de charger une image et d’afficher les prédictions avec probabilités.
 
-![Main Input Window](screenshots/Capture_4.jpg)
 <p align="center">
   <img src="screenshots/Capture_4.jpg" width="600">
 </p>
@@ -41,9 +40,15 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 ### Étape 4: Évaluation
 - Accuracy sur test set : ~0.82
 - Visualisation des courbes de loss et accuracy pour train et validation et la matrice de confusion .
- ![Main Input Window](screenshots/accuracy.png) 
- ![Main Input Window](screenshots/loss.png)
- ![Main Input Window](screenshots/matrice.png) 
+<p align="center">
+  <img src="screenshots/accuracy.png" width="600">
+</p>
+<p align="center">
+  <img src="screenshots/loss.png" width="600">
+</p>
+<p align="center">
+  <img src="screenshots/matrice.png" width="600">
+</p>
 
 ### Étape 5: Interface Graphique
 - Développée avec Tkinter pour charger une image et afficher les prédictions avec probabilités.
