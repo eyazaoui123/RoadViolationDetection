@@ -21,13 +21,17 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 
 **Train/Validation/Test split** : Déjà organisé dans le dataset, traité via ImageDataGenerator.
 
+**Note :** Placez le dossier DataSet dans la racine du projet avant de lancer l’entraînement
+
+---
+
 ## ⚙️ Étapes du Projet
 
 ### Étape 1: Prétraitement et organisation des données
-- Copie des images dans des répertoires par classe.
+- Copie des images dans des répertoires par classe (ProcessedData/train, ProcessedData/valid, ProcessedData/test) générés automatiquement.
 - Normalisation des pixels [0,1] et augmentation de données (rotation, translation, zoom, flip).
 
-### Étape 2: Définition du modèle CNN (transfer learning)
+### Étape 2: Définition du modèle CNN
 - MobileNetV2 pré-entraîné sur ImageNet, tête personnalisée avec GlobalAveragePooling2D, Dense et Dropout.
 - Fine-tuning des dernières couches pour adapter au dataset.
 
@@ -39,7 +43,7 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 
 ### Étape 4: Évaluation
 - Accuracy sur test set : ~0.82
-- Visualisation des courbes de loss et accuracy pour train et validation et la matrice de confusion .
+- Visualisation des courbes de loss et accuracy pour train et validation, et la matrice de confusion.
 <p align="center">
   <img src="screenshots/accuracy.png" width="400">
 </p>
@@ -52,25 +56,40 @@ Une interface graphique interactive permet de charger une image et d’afficher 
 
 ### Étape 5: Interface Graphique
 - Développée avec Tkinter pour charger une image et afficher les prédictions avec probabilités.
-
-## 🖥️ Interface Graphique
-- Charger des images locales via bouton.
-- Afficher les prédictions de classes et probabilités.
 - Aucune dépendance externe requise pour l’UI (Tkinter + PIL).
+
 
 ## 🛠️ Installation et Exécution
 
 ### Prérequis
-- Python 3.6+
+- **Python 3.6+** (Tkinter inclus par défaut)
 - Bibliothèques Python : TensorFlow, NumPy, Pandas, PIL, Tkinter, keras, matplotlib
-  
-### Étapes
+
+### Prérequis
 1. Clonez le dépôt :
-   ```bash
-   git clone https://github.com/eyazaoui123/RoadViolationDetection.git
-   cd RoadViolationDetection
-2. Installer les requirements
-3. Excécuter le fichier main.py
+```
+git clone https://github.com/eyazaoui123/RoadViolationDetection.git
+cd RoadViolationDetection
+```
+2. Placez le dossier DataSet à la racine du projet.
+3. Installer les dépendances (si ce n’est pas déjà fait) :
+```
+pip install -r requirements.txt
+```
+4. Entraînement du modèle :
+- Avec Jupyter Notebook :
+```
+jupyter nbconvert --to notebook --execute training_model.ipynb --inplace
+```
+- Ou via le script Python :
+```
+python training_model.py
+```
+5. Exécuter l’interface graphique :
+```
+python main.py
+```
+**Note GPU **: Le script détecte automatiquement un GPU si disponible, mais fonctionne aussi sur CPU (plus lent).
 
 ## 📁 Repository Structure
 
@@ -81,6 +100,7 @@ RoadViolationDetection/
 ├── labels.csv                  # Noms des classes
 ├── road_violation_model3.keras # Modèle entraîné
 ├── training_model.ipynb        # Notebook d’entraînement
+├── training_model.py           # Script d’entraînement local
 ├── screenshots/                # Captures d’écran UI
 ├── requirements.txt            # Dépendances Python
 └── README.md
