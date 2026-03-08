@@ -9,7 +9,9 @@ Développer un modèle de classification basé sur CNN pour détecter les infrac
 Une interface graphique interactive permet de charger une image et d’afficher les prédictions avec probabilités.
 
 ![Main Input Window](screenshots/Capture_4.jpg)
-
+<p align="center">
+  <img src="screenshots/Capture_4.jpg" width="600">
+</p>
 ---
 
 ## 📊 Base de Données
